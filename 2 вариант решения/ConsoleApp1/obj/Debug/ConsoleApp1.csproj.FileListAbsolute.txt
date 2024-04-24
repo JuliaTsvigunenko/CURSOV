@@ -1,0 +1,7 @@
+C:\Users\kab31\OneDrive\Рабочий стол\CURSOV-main\2 вариант решения\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\kab31\OneDrive\Рабочий стол\CURSOV-main\2 вариант решения\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\kab31\OneDrive\Рабочий стол\CURSOV-main\2 вариант решения\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\kab31\OneDrive\Рабочий стол\CURSOV-main\2 вариант решения\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\kab31\OneDrive\Рабочий стол\CURSOV-main\2 вариант решения\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\kab31\OneDrive\Рабочий стол\CURSOV-main\2 вариант решения\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\kab31\OneDrive\Рабочий стол\CURSOV-main\2 вариант решения\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

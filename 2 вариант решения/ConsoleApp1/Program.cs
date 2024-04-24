@@ -13,8 +13,8 @@ namespace ConsoleApp1
 
             VoterList voterList = new VoterList(); // Создание экземпляра списка избирателей
 
-            while (true) // Основной цикл программы для работы с меню
-            {
+            //while (true) // Основной цикл программы для работы с меню
+            //{
                 Console.WriteLine("Меню программы по работе с избирателями");
                 Console.WriteLine("1. Вывести всех избирателей");
                 Console.WriteLine("2. Добавить избирателя в начало списка");
@@ -29,9 +29,10 @@ namespace ConsoleApp1
                 Console.WriteLine("11. Загрузить данные из бинарного файла");
                 Console.WriteLine("12. Выход из программы");
                 Console.Write("Введите номер действия: ");
+                
+            Console.ReadLine();
 
-
-            }
+            //}
         }
     }
 }

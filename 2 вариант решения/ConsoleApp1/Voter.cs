@@ -38,19 +38,21 @@ namespace ConsoleApp1
         /// <summary>
         /// Голосование (да / нет/ воздерживаюсь)
         /// </summary>
-        public string Vote { get; set; }
+        public int Vote { get; set; }
 
-
+        public Voter() { }
         /// <summary>
         /// Конструктор с параметрами
         /// </summary>
         /// <param name="fullName"></param>
         /// <param name="address"></param>
         /// <param name="age"></param>
-        /// <param name="pollingStationNumber"></param>
+        /// <param name="plotNumber"></param>
         /// <param name="yearOfVoting"></param>
         /// <param name="vote"></param>
-        public Voter(string fullName, string address, int age, int plotNumber, int yearOfVoting, string vote)
+
+
+        public Voter(string fullName, string address, int age, int plotNumber, int yearOfVoting, int vote)
         {
            FullName = fullName;
            Address = address;
@@ -69,7 +71,7 @@ namespace ConsoleApp1
          {
             return $"ФИО: {FullName}\nАдресс: {Address}\nВозраст: {Age}\nНомер участка: {PlotNumber}\nГод голосования: {YearOfVoting}\nГолос: {Vote}";
          }
-
+        
         
 
 
