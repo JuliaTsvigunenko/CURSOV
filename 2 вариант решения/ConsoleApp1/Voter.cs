@@ -40,18 +40,20 @@ namespace ConsoleApp1
         /// </summary>
         public int Vote { get; set; }
 
+        /// <summary>
+        /// Конструктор без параметров
+        /// </summary>
         public Voter() { }
+
         /// <summary>
         /// Конструктор с параметрами
         /// </summary>
-        /// <param name="fullName"></param>
-        /// <param name="address"></param>
-        /// <param name="age"></param>
-        /// <param name="plotNumber"></param>
-        /// <param name="yearOfVoting"></param>
-        /// <param name="vote"></param>
-
-
+        /// <param name="fullName">ФИО избирателя</param>
+        /// <param name="address">Адрес проживания избирателя</param>
+        /// <param name="age">Возраст</param>
+        /// <param name="plotNumber">Номер участка</param>
+        /// <param name="yearOfVoting">Год голосования</param>
+        /// <param name="vote">Голосование (да / нет/ воздерживаюсь)</param>
         public Voter(string fullName, string address, int age, int plotNumber, int yearOfVoting, int vote)
         {
            FullName = fullName;
@@ -69,7 +71,7 @@ namespace ConsoleApp1
          /// <returns></returns>
          public override string ToString()
          {
-            return $"ФИО: {FullName}\nАдресс: {Address}\nВозраст: {Age}\nНомер участка: {PlotNumber}\nГод голосования: {YearOfVoting}\nГолос: {Vote}";
+            return $"ФИО: {FullName}\nАдрес проживания: {Address}\nВозраст: {Age}\nНомер участка: {PlotNumber}\nГод голосования: {YearOfVoting}\nГолос: {Vote}";
          }
         
         
