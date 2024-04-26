@@ -65,15 +65,9 @@ namespace ConsoleApp1
         /// </summary>
         public void RemoveVoter()
         {
-            Voter voter1 = null;
-            foreach (var voter in voters)
-            {
-                Console.WriteLine(voter.ToString());
-                Console.WriteLine("Введите индекс избирателя которого надо удалить ");
-                int index = int.Parse(Console.ReadLine());
-                voter1 = voters[index];
-            }
-            voters.Remove(voter1);
+            Console.WriteLine("Введите индекс избирателя которого надо удалить ");
+            int index = int.Parse(Console.ReadLine());
+            voters.Remove(voters[index]);
         }
 
         public Voter Init()

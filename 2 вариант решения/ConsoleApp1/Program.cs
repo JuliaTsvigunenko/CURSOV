@@ -15,6 +15,7 @@ namespace ConsoleApp1
 
             while (true) // Основной цикл программы для работы с меню
             {
+                Console.Clear();
                 //1 Вывод меню для работы со списком
                 Console.WriteLine("Меню программы по работе с избирателями");
                 Console.WriteLine("1. Вывести всех избирателей");
@@ -31,82 +32,84 @@ namespace ConsoleApp1
                 Console.Write("Введите номер действия: ");
 
                 int izbiratel = int.Parse(Console.ReadLine());
+                Console.Clear();
                 switch (izbiratel)
                 {
                     //2 вывод всех людей case 1
                     case 1:
-                        Console.Clear();
+                        
                         Console.WriteLine("Вывод информации о всех избирателях");
                         voterList.ShowInfo();
                         Console.ReadLine();
-                        Console.Clear();
+                       
                         break;
                     case 2:
-                        Console.Clear();
+                       
                         Console.WriteLine("Добавть избирателя в начало списка");
                         voterList.AddStart();
                         Console.ReadLine();
-                        Console.Clear();
+                       
                         break;
                     case 3:
-                        Console.Clear();
+                      
                         Console.WriteLine("Добавить избирателя в конец списка");
                         voterList.AddEnd();
                         Console.ReadLine();
-                        Console.Clear();
+                        
                         break;
                     case 4:
-                        Console.Clear();
+                        
                         Console.WriteLine("Добавить избирателя после указанного избирателя");
                         voterList.AddAfter();
                         Console.ReadLine();
-                        Console.Clear();
+                        
                         break;
                     case 5:
-                        Console.Clear();
+                      
                         Console.WriteLine("Добавить избирателя перед указанным избирателем");
                         voterList.AddBefore();
                         Console.ReadLine();
-                        Console.Clear();
+                        
                         break;
                     case 6:
-                        Console.Clear();
+                   
                         Console.WriteLine("Удалить избирателя из списка");
                         voterList.RemoveVoter();
                         Console.ReadLine();
-                        Console.Clear();
+                  
                         break;
                     case 7:
-                        Console.Clear();
+                   
                         Console.WriteLine("Вывести избирателей по возрастным группам");
                         voterList.PrintByAgeGroup();
                         Console.ReadLine();
-                        Console.Clear();
+                  
                         break;
                     case 8:
-                        Console.Clear();
+                   
                         Console.WriteLine("Вывести избирателей с негативным или воздержательным голосом в текущем году");
                         voterList.PrintVozd();
                         Console.ReadLine();
-                        Console.Clear();
+                  
                         break;
                     case 9:
-                        Console.Clear();
+                    
                         Console.WriteLine("Создать новый список избирателей по номеру участка");
                         voterList.ListPlotNumber();
                         Console.ReadLine();
-                        Console.Clear();
+                        
                         break;
                     case 0:
                         return;
                     default:
-                        Console.Clear();
+                        
                         Console.WriteLine("Неверный номер, повторите еще раз.");
+                        Console.ReadLine();
                         break;
 
                 }
 
-                Console.ReadLine();
+               Console.ReadLine();
 
             }
             
