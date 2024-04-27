@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    // Класс, в котором хранятся все методы
     class VoterList
     {
         /// <summary>
@@ -18,6 +21,7 @@ namespace ConsoleApp1
         /// </summary>
         public void ShowInfo()
         {
+            Load();
             foreach (var voter in voters)
             {
                 Console.WriteLine(voter);
@@ -29,7 +33,9 @@ namespace ConsoleApp1
         /// </summary>
         public void AddStart()
         {
+            Load();
             voters.Insert(0, Init());
+            Save();
         }
 
         /// <summary>
@@ -37,7 +43,9 @@ namespace ConsoleApp1
         /// </summary>
         public void AddEnd()
         {
+            Load();
             voters.Add(Init());
+            Save();
         }
 
         /// <summary>
@@ -45,9 +53,11 @@ namespace ConsoleApp1
         /// </summary>
         public void AddAfter()
         {
+            Load();
             Console.WriteLine("Введите индекс изберателя, после которого вы хотите добавить нового: ");
             int index = int.Parse(Console.ReadLine());
             voters.Insert(index+1, Init());
+            Save();
         }
 
         /// <summary>
@@ -55,9 +65,11 @@ namespace ConsoleApp1
         /// </summary>
         public void AddBefore()
         {
+            Load();
             Console.WriteLine("Введите индекс изберателя, перед которым вы хотите добавить нового: ");
             int index = int.Parse(Console.ReadLine());
             voters.Insert(index, Init());
+            Save();
         }
 
         /// <summary>
@@ -65,11 +77,17 @@ namespace ConsoleApp1
         /// </summary>
         public void RemoveVoter()
         {
+            Load();
             Console.WriteLine("Введите индекс избирателя которого надо удалить ");
             int index = int.Parse(Console.ReadLine());
             voters.Remove(voters[index]);
+            Save();
         }
 
+        /// <summary>
+        /// Метод для создания экземпляров класса
+        /// </summary>
+        /// <returns></returns>
         public Voter Init()
         {
             Console.WriteLine("Введите полное ФИО избирателя: ");
@@ -94,6 +112,7 @@ namespace ConsoleApp1
         /// </summary>
         public void PrintByAgeGroup()
         {
+            Load();
             Console.WriteLine("Младше 30 лет:");
             foreach (var voter in voters)
             {
@@ -122,7 +141,7 @@ namespace ConsoleApp1
                     Console.WriteLine($"{voter}");
                 }
             }
-
+            Save();
         }
 
         /// <summary>
@@ -130,6 +149,7 @@ namespace ConsoleApp1
         /// </summary>
         public void PrintVozd()
         {
+            Load();
             foreach(var voter in voters)
             {
                 if(voter.Vote == 2 || voter.Vote == 3)
@@ -137,6 +157,7 @@ namespace ConsoleApp1
                     Console.WriteLine(voter.ToString());
                 }
             }
+            Save();
         }
 
         /// <summary>
@@ -144,6 +165,7 @@ namespace ConsoleApp1
         /// </summary>
         public void ListPlotNumber()
         {
+            Load();
             bool tr = false; //переменная для проверки существования участка
             Console.WriteLine("Введите номер учатска: ");
             int number = int.Parse(Console.ReadLine());
@@ -165,9 +187,37 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Такого участка не существует, попробуйте еще раз");
             }
+            Save();
         }
 
+        /// <summary>
+        /// Путь к файлу
+        /// </summary>
+        string path = @"C:\Users\Kab-35-6\Desktop\2 вариант решения\ConsoleApp1\Voters.bin";
 
+        /// <summary>
+        /// Метод для сохранения в файл
+        /// </summary>
+        public  void Save()
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, voters);
+            }
+        }
+
+        /// <summary>
+        /// Метод для загрузки из файлов
+        /// </summary>
+        public  void Load()
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                voters = (List<Voter>)formatter.Deserialize(fs);
+            }
+        }
 
 
 
